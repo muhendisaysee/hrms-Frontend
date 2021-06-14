@@ -1,36 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import JobAdvertisementService from "../services/jobAdvertisementService";
 
 export default function JobAdvertisementList() {
+
+    const [jobAdvertisements, setJobAdvertisements] = useState([]);
+    useEffect(()=>{
+        let jobAdvertisementService = new JobAdvertisementService()
+        jobAdvertisementService.getJobAdvertisements().then(result=>setJobAdvertisements(result.data.data))
+    })
     return (
         <div>
-              <Table celled>
+            <Table celled>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Header</Table.HeaderCell>
-                        <Table.HeaderCell>Header</Table.HeaderCell>
-                        <Table.HeaderCell>Header</Table.HeaderCell>
+                        <Table.HeaderCell>City</Table.HeaderCell>
+                        <Table.HeaderCell>Company</Table.HeaderCell>
+                        <Table.HeaderCell>Description</Table.HeaderCell>
+                        <Table.HeaderCell>Job Title</Table.HeaderCell>
+                        <Table.HeaderCell>Open Position</Table.HeaderCell>
+                        <Table.HeaderCell>Min Salary</Table.HeaderCell>
+                        <Table.HeaderCell>Max Salary</Table.HeaderCell>
+                        <Table.HeaderCell>Deadline</Table.HeaderCell>
+                        <Table.HeaderCell>Status</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
                 <Table.Body>
-                    <Table.Row>
-                        <Table.Cell>
-                            <Label ribbon>First</Label>
-                        </Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                    </Table.Row>
+                    {
+                        jobAdvertisements.map(jobAdvertisement => (
+                            <Table.Row>
+                                <Table.Cell>{jobAdvertisement.city.cityName}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.employer.companyName}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.description}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.jobTitle.title}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.openPosition}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.salaryMin}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.salaryMax}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.deadline}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.status}</Table.Cell>
+                            </Table.Row>
+                        ))
+                    }
                 </Table.Body>
 
                 <Table.Footer>

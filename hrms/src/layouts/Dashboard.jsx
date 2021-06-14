@@ -6,16 +6,16 @@ import { Grid, GridColumn } from 'semantic-ui-react'
 export default function Dashboard() {
     return (
         <div>
-           <Grid>
-               <Grid.Row>
-                   <Grid.Column width={4}>
-                         <Option></Option>
-                   </Grid.Column>
-                   <Grid.Column width={12}>
+            <Grid>
+                <Grid.Row>
+                    <Grid.Column width={4}>
+                        <Option></Option>
+                    </Grid.Column>
+                    <Grid.Column width={12}>
                         <JobAdvertisementList></JobAdvertisementList>
-                   </Grid.Column>
-               </Grid.Row>
-               </Grid> 
-             </div>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </div>
     )
 }
