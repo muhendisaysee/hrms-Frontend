@@ -29,7 +29,7 @@ export default function JobAdvertisementList() {
                 <Table.Body>
                     {
                         jobAdvertisements.map(jobAdvertisement => (
-                            <Table.Row>
+                            <Table.Row  key={jobAdvertisement.id}>
                                 <Table.Cell>{jobAdvertisement.city.cityName}</Table.Cell>
                                 <Table.Cell>{jobAdvertisement.employer.companyName}</Table.Cell>
                                 <Table.Cell>{jobAdvertisement.description}</Table.Cell>

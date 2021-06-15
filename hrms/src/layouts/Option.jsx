@@ -1,18 +1,17 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
+
 export default function Option() {
     return (
         <div>
             <Menu pointing vertical>
         <Menu.Item
-          name='home'
+          name='Candidates'
         />
         <Menu.Item
-          name='messages'
+          name='Employers'
         />
-        <Menu.Item
-          name='friends'
-        />
+        
       </Menu>
         </div>
     )
