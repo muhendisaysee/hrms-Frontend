@@ -4,6 +4,7 @@ import EmployerList from '../pages/EmployerList'
 import Option from './Option'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import CandidateList from '../pages/CandidateList'
+import JobTitleList from '../pages/JobTitleList'
 
 export default function Dashboard() {
     return (
@@ -14,9 +15,14 @@ export default function Dashboard() {
                         <Option></Option>
                     </Grid.Column>
                     <Grid.Column width={12}>
+                        JOB ADVERTISEMENTS LIST
                         <JobAdvertisementList></JobAdvertisementList>
+                        EMPLOYERS LIST
                         <EmployerList></EmployerList>
+                        CANDIDATES LIST
                         <CandidateList></CandidateList>
+                        JOB TITLES LIST
+                        <JobTitleList></JobTitleList>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
