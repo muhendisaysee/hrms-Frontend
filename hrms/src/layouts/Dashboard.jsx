@@ -5,6 +5,7 @@ import Option from './Option'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import CandidateList from '../pages/CandidateList'
 import JobTitleList from '../pages/JobTitleList'
+import CityList from '../pages/CityList'
 
 export default function Dashboard() {
     return (
@@ -23,6 +24,8 @@ export default function Dashboard() {
                         <CandidateList></CandidateList>
                         JOB TITLES LIST
                         <JobTitleList></JobTitleList>
+                        CITIES LIST
+                        <CityList></CityList>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
